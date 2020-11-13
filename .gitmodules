@@ -1,0 +1,3 @@
+[submodule "client-sub"]
+	path = client-sub
+	url = git://github.com/KostiaNetot/sub-news-client
