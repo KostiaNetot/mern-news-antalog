@@ -1,3 +1,6 @@
 [submodule "client-sub"]
 	path = client-sub
 	url = git://github.com/KostiaNetot/sub-news-client
+[submodule "client-s"]
+	path = client-s
+	url = https://github.com/KostiaNetot/sub-news-client
