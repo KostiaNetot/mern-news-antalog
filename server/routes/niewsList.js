@@ -33,4 +33,16 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
 
+router.route('/upd/:id').put((req, res) => {
+  const { id } = req.params;
+
+  News.findByIdAndUpdate(id, req.body, { new: true })
+    .then(doc => {
+      if (doc) {
+        res.json(doc)
+      }
+    })
+    .catch(err => console.log(err));
+});
+
 module.exports = router;
