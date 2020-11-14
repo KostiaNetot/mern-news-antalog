@@ -8,9 +8,9 @@ const categorySchema = new Schema({
     required: true,
     unique: true
   },
-  newsList: {
-    type: Array,
-  },
+  // newsList: {
+  //   type: Array,
+  // },
 }, {
   timestamps: true,
 });

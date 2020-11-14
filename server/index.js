@@ -20,11 +20,6 @@ connection.once('open', () => {
 const newsRouter = require('./routes/niewsList');
 const categoriesRouter = require('./routes/categories');
 
-// app.post('/auth-imitation', (req, res) => {
-//   console.log(req.body);
-//   res.send(true);
-// });
-
 app.use('/news', newsRouter);
 app.use('/categories', categoriesRouter);
 

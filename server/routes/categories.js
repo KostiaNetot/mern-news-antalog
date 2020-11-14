@@ -10,8 +10,8 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
   const name = req.body.name;
-  const newsList = req.body.newsList;
-  const newCategory = new Category({ name, newsList });
+  // const newsList = req.body.newsList;
+  const newCategory = new Category({ name });
 
   newCategory.save()
     .then(() => res.json('Category added!'))
@@ -28,6 +28,12 @@ router.route('/upd/:id').put((req, res) => {
       }
     })
     .catch(err => console.log(err));
+});
+
+router.route('/:id').delete((req, res) => {
+  Category.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Category deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;
