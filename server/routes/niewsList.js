@@ -45,4 +45,10 @@ router.route('/upd/:id').put((req, res) => {
     .catch(err => console.log(err));
 });
 
+router.route('/:id').delete((req, res) => {
+  News.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Category deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
